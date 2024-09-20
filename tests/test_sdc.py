@@ -99,3 +99,14 @@ class TestSdcClient(tests.PyPowerFlexTestCase):
                 self.client.sdc.query_selected_statistics,
                 properties=["numOfMappedVolumes"],
             )
+
+    def test_sdc_query_hosts(self):
+        ret = self.client.sdc.query_hosts(sdc_id='1')
+        assert ret.get("id")=='1'
+
+    def test_sdc_query_hosts_bad_status(self):
+        with self.http_response_mode(self.RESPONSE_MODE.BadStatus):
+            self.assertRaises(
+                exceptions.PowerFlexFailQuerying,
+                self.client.sdc.query_hosts,
+            )

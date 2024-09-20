@@ -93,3 +93,14 @@ class Sdc(base_client.EntityRequest):
             params["allIds"] = ""
 
         return self._query_selected_statistics(action, params)
+    
+    def query_hosts(self, sdc_id=None):
+        """Get all SDC or Host instances.
+
+        :param sdc_id: sdc host id
+        :type sdc_id: string
+        :return: Query result
+        :rtype: dict
+        """
+
+        return self.get(entity_id=sdc_id)
