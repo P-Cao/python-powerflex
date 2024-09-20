@@ -30,6 +30,7 @@ from PyPowerFlex.objects.service_template import ServiceTemplate
 from PyPowerFlex.objects.managed_device import ManagedDevice
 from PyPowerFlex.objects.deployment import Deployment
 from PyPowerFlex.objects.firmware_repository import FirmwareRepository
+from PyPowerFlex.objects.host import Host
 
 
 __all__ = [
@@ -50,4 +51,5 @@ __all__ = [
     'ManagedDevice',
     'Deployment',
     'FirmwareRepository',
+    'Host',
 ]
